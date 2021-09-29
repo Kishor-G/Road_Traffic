@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<center>
+<form action="{{ url_for('predict')}}" method="post">
+
+    <H1>ENTER THE DETAILS</H1>
+
+    <label for="day_W">DAY OF DATE:</label>
+    <input class="number" type="number" name="day" placeholder="DAY" min="1" max="31" required=""><br>
+    <label for="day_W">DAY OF WEEK:</label>
+    <select name="day_w" id="day_W">
+        <option value=1>SUNDAY</option>
+        <option value=2>MONDAY</option>
+        <option value=3>TUESDAY</option>
+        <option value=4>WEDNESDAY</option>
+        <option value=5>THURSDAY</option>
+        <option value=6>FRIDAY</option>
+        <option value=7>SATURDAY</option></select><br>
+
+
+
+    <label for="months">MONTH:</label>
+    <select name="months" id="months">
+        <option value=1>January</option>
+        <option value=2>February</option>
+        <option value=3>March</option>
+        <option value=4>April</option>
+        <option value=5>May</option>
+        <option value=6>June</option>
+        <option value=7>July</option>
+        <option value=8>August</option>
+        <option value=9>September</option>
+        <option value=10>October</option>
+        <option value=11>November</option>
+        <option value=12>December</option></select><br>
+
+    <label for="road">ROAD:</label>
+    <select name="road" id="road">
+        <option value=3>Rural: Principal Arterial - Other(3R)</option>
+        <option value=1>Urban: Principal Arterial - Interstate(1U)</option>
+        <option value=5>Rural: Minor Arterial(4R)</option>
+        <option value=2>Urban: Principal Arterial - Other Freeways or Expressways(2U)</option>
+        <option value=4>Urban: Principal Arterial - Other(3U)</option>
+        <option value=6>Urban: Minor Arterial(4U)</option>
+        <option value=0>Rural: Principal Arterial - Interstate(1R)</option>
+        <option value=7>Rural: Major Collector(5R)</option>
+        <option value=9>Rural: Minor Collector(6R)</option>
+        <option value=8>Urban: Collector(5U)</option>
+        <option value=10>Rural: Local System(7R)</option>
+        <option value=11>Urban: Local System(7U)</option></select><br>
+
+
+    <label for="lane">LANE OF TRAVEL:</label>
+    <select name="lane" id="lane">
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=9>9</option></select><br>
+
+
+    <label for="direction">DIRECTION OF TRAVEL:</label>
+    <select name="direction" id="direction">
+        <option value=1>North</option>
+        <option value=7>West</option>
+        <option value=3>East</option>
+        <option value=5>South</option>
+        <option value=6>Southwest</option>
+        <option value=8>Northwest</option>
+        <option value=0>East-West or Southeast-Northwest combined (ATR stations only)</option>
+        <option value=9>North-South or Northeast-Southwest combined (ATR stations only)</option>
+        <option value=4>Southeast</option>
+        <option value=2>Northeast</option></select><br>
+
+
+
+        <input type="submit" value="UPLOAD">
+</form>
+</center>
+ {% endblock %}
